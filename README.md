@@ -1,3 +1,3 @@
-# hf_ai_app
+# DynamAI
 
 A new Flutter project.
