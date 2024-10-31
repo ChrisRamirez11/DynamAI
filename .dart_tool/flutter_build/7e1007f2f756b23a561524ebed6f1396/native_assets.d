@@ -1,0 +1,1 @@
+ D:\\PROJECTS\\SPECIALS\\DynamAI\\.dart_tool\\flutter_build\\7e1007f2f756b23a561524ebed6f1396\\native_assets.yaml: 

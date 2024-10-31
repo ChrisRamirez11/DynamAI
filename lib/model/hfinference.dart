@@ -1,14 +1,15 @@
 
 import 'dart:math';
 
+import 'package:hf_ai_app/utils/consts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 Future sendTextGenerationRequest(String model, String input) async {
   final number = Random().nextInt(100000);
-  final url = Uri.parse('https://api-inference.huggingface.co/models/$model');
+  final url = Uri.parse('${Consts.hfApi}$model');
   final headers = {
-    "Authorization": "Bearer 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",
+    "Authorization": "Bearer ${Consts.hfToken}",
     "Content-Type": "application/json"
   };
   final body = jsonEncode({"inputs": input,

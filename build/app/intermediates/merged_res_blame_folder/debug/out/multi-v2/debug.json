@@ -364,7 +364,7 @@
             "outputFile": "com.dynamicjobs.dynamai.app-merged_res-26:/values-v31_values-v31.arsc.flat",
             "map": [
                 {
-                    "source": "D:\\PROJECTS\\SPECIALS\\hf_ai_app\\android\\app\\src\\main\\res\\values-v31\\styles.xml",
+                    "source": "D:\\PROJECTS\\SPECIALS\\DynamAI\\android\\app\\src\\main\\res\\values-v31\\styles.xml",
                     "from": {
                         "startLines": "3,15",
                         "startColumns": "4,4",
@@ -403,7 +403,7 @@
             "outputFile": "com.dynamicjobs.dynamai.app-merged_res-26:/values-night-v31_values-night-v31.arsc.flat",
             "map": [
                 {
-                    "source": "D:\\PROJECTS\\SPECIALS\\hf_ai_app\\android\\app\\src\\main\\res\\values-night-v31\\styles.xml",
+                    "source": "D:\\PROJECTS\\SPECIALS\\DynamAI\\android\\app\\src\\main\\res\\values-night-v31\\styles.xml",
                     "from": {
                         "startLines": "3,15",
                         "startColumns": "4,4",
@@ -660,24 +660,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\chris\\.gradle\\caches\\transforms-3\\010887bb3359843376c02ecf4bf2ef43\\transformed\\jetified-savedstate-1.2.1\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "53",
-                        "endOffsets": "104"
-                    },
-                    "to": {
-                        "startLines": "142",
-                        "startColumns": "4",
-                        "startOffsets": "6991",
-                        "endColumns": "53",
-                        "endOffsets": "7040"
-                    }
-                },
-                {
-                    "source": "D:\\PROJECTS\\SPECIALS\\hf_ai_app\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "D:\\PROJECTS\\SPECIALS\\DynamAI\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,18",
                         "startColumns": "4,4",
@@ -693,6 +676,23 @@
                         "endLines": "162,165",
                         "endColumns": "12,12",
                         "endOffsets": "8341,8510"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\chris\\.gradle\\caches\\transforms-3\\010887bb3359843376c02ecf4bf2ef43\\transformed\\jetified-savedstate-1.2.1\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "53",
+                        "endOffsets": "104"
+                    },
+                    "to": {
+                        "startLines": "142",
+                        "startColumns": "4",
+                        "startOffsets": "6991",
+                        "endColumns": "53",
+                        "endOffsets": "7040"
                     }
                 },
                 {
@@ -1088,7 +1088,7 @@
             "outputFile": "com.dynamicjobs.dynamai.app-merged_res-26:/values-night-v8_values-night-v8.arsc.flat",
             "map": [
                 {
-                    "source": "D:\\PROJECTS\\SPECIALS\\hf_ai_app\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "D:\\PROJECTS\\SPECIALS\\DynamAI\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,18",
                         "startColumns": "4,4",

@@ -4,7 +4,7 @@
             "outputFile": "com.dynamicjobs.dynamai.app-mergeDebugResources-24:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "D:\\PROJECTS\\SPECIALS\\hf_ai_app\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "D:\\PROJECTS\\SPECIALS\\DynamAI\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,18",
                         "startColumns": "4,4",

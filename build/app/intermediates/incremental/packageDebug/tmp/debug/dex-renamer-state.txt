@@ -1,9 +1,9 @@
-#Wed Oct 30 22:51:27 CDT 2024
-base.0=D\:\\PROJECTS\\SPECIALS\\hf_ai_app\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=D\:\\PROJECTS\\SPECIALS\\hf_ai_app\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
-base.2=D\:\\PROJECTS\\SPECIALS\\hf_ai_app\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.3=D\:\\PROJECTS\\SPECIALS\\hf_ai_app\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
-base.4=D\:\\PROJECTS\\SPECIALS\\hf_ai_app\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+#Thu Oct 31 12:00:30 CDT 2024
+base.0=D\:\\PROJECTS\\SPECIALS\\DynamAI\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=D\:\\PROJECTS\\SPECIALS\\DynamAI\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
+base.2=D\:\\PROJECTS\\SPECIALS\\DynamAI\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.3=D\:\\PROJECTS\\SPECIALS\\DynamAI\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
+base.4=D\:\\PROJECTS\\SPECIALS\\DynamAI\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=0/classes.dex
