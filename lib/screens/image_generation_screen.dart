@@ -14,7 +14,8 @@ class _TextgenerationState extends State<Textgeneration> {
   final TextEditingController _textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    final list = Provider.of<TextImageListProvider>(context).textImageList;
+    final textImageListProvider = Provider.of<TextImageListProvider>(context);
+    final list = textImageListProvider.textImageList;
     return SafeArea(
       child: Scaffold(
         body: SizedBox(
@@ -37,7 +38,10 @@ class _TextgenerationState extends State<Textgeneration> {
                   ],
                 ),
               ),
-              chatTextBox(context: context,textController: _textEditingController)
+              chatTextBox(
+                  context: context,
+                  textController: _textEditingController,
+                  listProvider: textImageListProvider)
             ],
           ),
         ),
