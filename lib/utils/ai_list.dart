@@ -7,8 +7,6 @@ class AILists {
   static const List<String> textToText = [
     'Qwen/Qwen2.5-72B-Instruct',
     'mistralai/Mixtral-8x7B-Instruct-v0.1',
-  ];
-  static const List<String> imageTtT = [
-    'meta-llama/Llama-3.2-11B-Vision-Instruct'
+    'mistralai/Mixtral-8x22B-Instruct-v0.1'
   ];
 }

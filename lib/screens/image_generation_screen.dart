@@ -78,12 +78,11 @@ class _TextgenerationState extends State<Textgeneration> {
                           setState(() {
                             list
                               ..add(InkWell(
-                                  onTap: () {
+                                  onTap: () =>
                                     ImageSaver(
                                             imageData: res,
                                             name: date.toString())
-                                        .saveImage();
-                                  },
+                                        .saveImage(),
                                   child: Image.memory(res)))
                               ..add(const SizedBox(
                                 height: 20,
