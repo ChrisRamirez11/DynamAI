@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hf_ai_app/providers/text_image_list_provider.dart';
 import 'package:hf_ai_app/screens/custom_error_screen.dart';
 import 'package:hf_ai_app/screens/home_screen.dart';
 import 'package:hf_ai_app/utils/theme.dart';
+import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +17,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialAppFood();
+    return MultiProvider(providers: [
+      ChangeNotifierProvider(create: (context) => TextImageListProvider(),)
+    ],
+      child: const MaterialAppFood());
   }
 }
 
