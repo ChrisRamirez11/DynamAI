@@ -5,7 +5,7 @@ import 'package:hf_ai_app/utils/consts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-Future sendTextGenerationRequest(String model, String input) async {
+Future sendImageGenerationRequest(String model, String input) async {
   final number = Random().nextInt(100000);
   final url = Uri.parse('${Consts.hfApi}$model');
   final headers = {

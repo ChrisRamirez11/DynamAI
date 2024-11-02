@@ -6,7 +6,7 @@ import 'package:hf_ai_app/widgets/text_message_widget.dart';
 
 Widget chatTextBox(
     {required BuildContext context,
-    required TextEditingController textController,required listProvider}) {
+    required TextEditingController textController, required listProvider}) {
   return Expanded(
     flex: 2,
     child: Row(
@@ -34,6 +34,7 @@ Widget chatTextBox(
             onPressed: () async {
               final String text = textController.text;
               textController.clear();
+              //TODO switch to choose method based on ai motive
               listProvider
                 ..addToList(TextMessageWidget(isMe: true, text: text))
                 ..addToList(const SizedBox(
@@ -41,7 +42,7 @@ Widget chatTextBox(
                 ));
               final DateTime date = DateTime.now();
               final res =
-                  await sendTextGenerationRequest(AILists.textToImage[0], text);
+                  await sendImageGenerationRequest(AILists.textToImage.elementAt(0)['endpoint']!, text);
               listProvider
                 ..addToList(InkWell(
                     onTap: () =>
