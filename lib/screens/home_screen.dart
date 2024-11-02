@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          bottomNavigationBar: getBottomNavBar(),
+          bottomNavigationBar: _getBottomNavBar(),
           appBar: AppBar(elevation: 20,title: Center(child: Text('DynamAI', style: Theme.of(context).textTheme.bodyLarge,)),
             backgroundColor: primary,
           ),
@@ -24,10 +24,10 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
 
-  Widget getBottomNavBar() {
+  Widget _getBottomNavBar() {
     return BottomNavigationBar(
       selectedIconTheme: const IconThemeData(size: 35),
-      items: getItems(),
+      items: _getItems(),
       currentIndex: selectedIndex,
       onTap: (value) {
         setState(() {
@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-List<BottomNavigationBarItem> getItems() {
+List<BottomNavigationBarItem> _getItems() {
   List<BottomNavigationBarItem> itemsList = [
     const BottomNavigationBarItem(icon: Icon(Icons.search), label: ''),
     const BottomNavigationBarItem(

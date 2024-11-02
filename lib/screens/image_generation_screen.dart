@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hf_ai_app/providers/text_image_list_provider.dart';
+import 'package:hf_ai_app/utils/ai_list.dart';
 import 'package:hf_ai_app/widgets/chat_text_box.dart';
 import 'package:provider/provider.dart';
 
@@ -12,6 +13,7 @@ class Textgeneration extends StatefulWidget {
 
 class _TextgenerationState extends State<Textgeneration> {
   final TextEditingController _textEditingController = TextEditingController();
+  final aiListMap = AILists.textToImage;
   @override
   Widget build(BuildContext context) {
     final textImageListProvider = Provider.of<TextImageListProvider>(context);
@@ -41,7 +43,8 @@ class _TextgenerationState extends State<Textgeneration> {
               chatTextBox(
                   context: context,
                   textController: _textEditingController,
-                  listProvider: textImageListProvider)
+                  listProvider: textImageListProvider,
+                  aIListMap: aiListMap)
             ],
           ),
         ),

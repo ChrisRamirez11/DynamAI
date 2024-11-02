@@ -36,57 +36,59 @@ class CustomErrorScreen extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: double.infinity,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const SizedBox(
-            height: 60,
-          ),
-          const Icon(
-            Icons.warning_rounded,
-            size: 200,
-            color: Color(0xFFEDBEAF),
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          const Text(
-            'ERROR',
-            style: TextStyle(fontSize: 30, color: Color(0xFFF9C5B7)),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Text(errorMsg,textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 16, color: Color(0xFFFCE3D5),)),
-          ),
-          Expanded(child: Container()),
-          ElevatedButton(
-              style: const ButtonStyle(
-                  elevation: WidgetStatePropertyAll(10),
-                  padding: WidgetStatePropertyAll(
-                      EdgeInsets.symmetric(horizontal: 50)),
-                  backgroundColor: WidgetStatePropertyAll(Color(0xFFFC8D82))),
-              onPressed: () {
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const HomeScreen(),
-                  ),
-                  (route) => false,
-                );
-              },
-              child: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 15),
-                child: Text('Menù Principal',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFFFCE3D5))),
-              )),
-          const SizedBox(
-            height: 150,
-          ),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(
+              height: 60,
+            ),
+            const Icon(
+              Icons.warning_rounded,
+              size: 200,
+              color: Color(0xFFEDBEAF),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            const Text(
+              'ERROR',
+              style: TextStyle(fontSize: 30, color: Color(0xFFF9C5B7)),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Text(errorMsg,textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 16, color: Color(0xFFFCE3D5),)),
+            ),
+            Expanded(child: Container()),
+            ElevatedButton(
+                style: const ButtonStyle(
+                    elevation: WidgetStatePropertyAll(10),
+                    padding: WidgetStatePropertyAll(
+                        EdgeInsets.symmetric(horizontal: 50)),
+                    backgroundColor: WidgetStatePropertyAll(Color(0xFFFC8D82))),
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomeScreen(),
+                    ),
+                    (route) => false,
+                  );
+                },
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  child: Text('Menù Principal',
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFFFCE3D5))),
+                )),
+            const SizedBox(
+              height: 150,
+            ),
+          ],
+        ),
       ),
     );
   }
