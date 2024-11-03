@@ -13,7 +13,27 @@ class Textgeneration extends StatefulWidget {
 }
 
 class _TextgenerationState extends State<Textgeneration> {
+  final ScrollController _scrollController = ScrollController();
   final TextEditingController _textEditingController = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    _scrollController.dispose();
+    _textEditingController.dispose();
+  }
+
+//TODO change this later to a optional button that appears in the end of the view for going to the max extent(it must be in the init state)
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scrollController.hasClients) {
+        _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+      }
+    });
+  }
+
   final aiListMap = AILists.textToImage;
   @override
   Widget build(BuildContext context) {
@@ -35,6 +55,7 @@ class _TextgenerationState extends State<Textgeneration> {
                     Expanded(
                       flex: 1,
                       child: ListView.builder(
+                        controller: _scrollController,
                         itemCount: list.length,
                         itemBuilder: (context, index) => list[index],
                       ),
