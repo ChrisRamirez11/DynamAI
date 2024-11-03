@@ -30,12 +30,12 @@ Widget chatTextBox(
           flex: 4,
           child: TextField(
             minLines: 1,
-            maxLines: 2,
+            maxLines: 3,
             style: Theme.of(context).textTheme.labelMedium,
             controller: textController,
-            decoration: const InputDecoration(
-              labelText: 'Enter text',
-              border: OutlineInputBorder(),
+            decoration: InputDecoration(labelStyle: Theme.of(context).textTheme.bodySmall,
+              labelText: selectedAiProvider.imageGenerationEndpoint,
+              border: const OutlineInputBorder(),
             ),
           ),
         ),
@@ -55,7 +55,7 @@ Widget chatTextBox(
                 ));
               final DateTime date = DateTime.now();
               final res = await sendImageGenerationRequest(
-                  selectedAiProvider.textToImageEndpoint, text);
+                  selectedAiProvider.imageGenerationEndpoint, text);
               listProvider
                 ..addToList(InkWell(
                     onTap: () =>

@@ -1,7 +1,7 @@
 class AILists {
   static const List<Map<String, String>> textToImage = [
     {
-      'name': 'Flux.1 Schnell',
+      'name': 'FlUX.1 Schnell',
       'endpoint': 'black-forest-labs/FLUX.1-schnell',
       'description': ''
     },

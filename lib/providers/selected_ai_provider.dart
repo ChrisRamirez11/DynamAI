@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class SelectedAiProvider extends ChangeNotifier {
   String _imageGenerationEndpoint = 'black-forest-labs/FLUX.1-schnell';
   String _textGenerationEndpoint = 'Qwen/Qwen2.5-72B-Instruct';
-  String _textTranslationEndpoint = 'google-t5/t5-base';
+  String _translationEndpoint = 'google-t5/t5-base';
 
-  String get textToImageEndpoint => _imageGenerationEndpoint;
-  String get textToText => _textGenerationEndpoint;
-  String get textTranslation => _textTranslationEndpoint;
+  String get imageGenerationEndpoint => _imageGenerationEndpoint;
+  String get textGenerationEndpoint => _textGenerationEndpoint;
+  String get translationEndpoint => _translationEndpoint;
 
   setImageGenerationEndpoint(String s) {
     _imageGenerationEndpoint = s;
@@ -19,8 +19,8 @@ class SelectedAiProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  setTextTranslationEndpoint(String s) {
-    _textTranslationEndpoint = s;
+  setTranslationEndpoint(String s) {
+    _translationEndpoint = s;
     notifyListeners();
   }
 }
