@@ -31,7 +31,7 @@ ThemeData theme = ThemeData(
 
   //SnackBarTheme
   //
-  snackBarTheme:const SnackBarThemeData(behavior: SnackBarBehavior.floating),
+  snackBarTheme: SnackBarThemeData(behavior: SnackBarBehavior.floating, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
 
   //ScrollbarTheme
   //
@@ -89,7 +89,7 @@ ThemeData themeDark = ThemeData.dark().copyWith(
     ),
     //SnackBarTheme
     //
-    snackBarTheme: const SnackBarThemeData(behavior: SnackBarBehavior.floating),
+    snackBarTheme: SnackBarThemeData(behavior: SnackBarBehavior.floating, backgroundColor: primary, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
 
     //ScrollbarTheme
     //

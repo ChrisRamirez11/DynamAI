@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hf_ai_app/model/hfinference.dart';
 import 'package:hf_ai_app/providers/selected_ai_provider.dart';
 import 'package:hf_ai_app/utils/image_saver.dart';
+import 'package:hf_ai_app/utils/theme.dart';
 import 'package:hf_ai_app/widgets/text_message_widget.dart';
 
 import '../providers/text_image_list_provider.dart';
@@ -33,7 +34,8 @@ Widget chatTextBox(
             maxLines: 3,
             style: Theme.of(context).textTheme.labelMedium,
             controller: textController,
-            decoration: InputDecoration(labelStyle: Theme.of(context).textTheme.bodySmall,
+            decoration: InputDecoration(
+              labelStyle: Theme.of(context).textTheme.bodySmall,
               labelText: selectedAiProvider.imageGenerationEndpoint,
               border: const OutlineInputBorder(),
             ),
@@ -57,11 +59,38 @@ Widget chatTextBox(
               final res = await sendImageGenerationRequest(
                   selectedAiProvider.imageGenerationEndpoint, text);
               listProvider
-                ..addToList(InkWell(
-                    onTap: () =>
-                        ImageSaver(imageData: res, name: date.toString())
-                            .saveImage(),
-                    child: Image.memory(res)))
+                ..addToList(Stack(
+                  children: [
+                    Image.memory(res),
+                    Positioned(
+                      right: 0,
+                      bottom: 0,
+                      child: IconButton(
+                          iconSize: 30,
+                          style: ButtonStyle(
+                              iconColor: const WidgetStatePropertyAll(primary),
+                              backgroundColor: WidgetStatePropertyAll(
+                                  secondary.withOpacity(0.5))),
+                          onPressed: () async {
+                            await ImageSaver(
+                                    imageData: res, name: date.toString())
+                                .saveImage();
+                            WidgetsBinding.instance.addPostFrameCallback(
+                              (timeStamp) => ScaffoldMessenger.of(context)
+                                  .showSnackBar(SnackBar(
+                                      content: Center(
+                                          child: Text(
+                                        'Image Saved',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelMedium,
+                                      )))),
+                            );
+                          },
+                          icon: const Icon(Icons.download_rounded)),
+                    )
+                  ],
+                ))
                 ..addToList(const SizedBox(
                   height: 20,
                 ));
