@@ -1,5 +1,6 @@
 
 import 'dart:math';
+import 'dart:developer' as dev;
 
 import 'package:hf_ai_app/utils/consts.dart';
 import 'package:http/http.dart' as http;
@@ -19,6 +20,7 @@ Future sendImageGenerationRequest(String model, String input) async {
   });
 
   try {
+    dev.log(model);
     final response = await http.post(url, headers: headers, body: body);
 
     if (response.statusCode == 200) {

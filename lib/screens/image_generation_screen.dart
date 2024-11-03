@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hf_ai_app/providers/selected_ai_provider.dart';
 import 'package:hf_ai_app/providers/text_image_list_provider.dart';
 import 'package:hf_ai_app/utils/ai_list.dart';
 import 'package:hf_ai_app/widgets/chat_text_box.dart';
@@ -16,6 +17,7 @@ class _TextgenerationState extends State<Textgeneration> {
   final aiListMap = AILists.textToImage;
   @override
   Widget build(BuildContext context) {
+    final selectedAiProvider = Provider.of<SelectedAiProvider>(context);
     final textImageListProvider = Provider.of<TextImageListProvider>(context);
     final list = textImageListProvider.textImageList;
     return SafeArea(
@@ -44,7 +46,9 @@ class _TextgenerationState extends State<Textgeneration> {
                   context: context,
                   textController: _textEditingController,
                   listProvider: textImageListProvider,
-                  aIListMap: aiListMap)
+                  aIListMap: aiListMap,
+                  selectedAiProvider: selectedAiProvider,
+                  changeEndpoint: selectedAiProvider.setImageGenerationEndpoint)
             ],
           ),
         ),

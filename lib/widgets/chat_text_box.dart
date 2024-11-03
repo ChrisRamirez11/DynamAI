@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:hf_ai_app/model/hfinference.dart';
-import 'package:hf_ai_app/utils/ai_list.dart';
+import 'package:hf_ai_app/providers/selected_ai_provider.dart';
 import 'package:hf_ai_app/utils/image_saver.dart';
 import 'package:hf_ai_app/widgets/text_message_widget.dart';
+
+import '../providers/text_image_list_provider.dart';
 
 Widget chatTextBox(
     {required BuildContext context,
     required TextEditingController textController,
-    required listProvider,
-    required List<Map<String, String>> aIListMap}) {
+    required TextImageListProvider listProvider,
+    required List<Map<String, String>> aIListMap,
+    required SelectedAiProvider selectedAiProvider,
+    required void Function(String) changeEndpoint}) {
   return Expanded(
     flex: 2,
     child: Row(
@@ -19,7 +23,8 @@ Widget chatTextBox(
         Expanded(
             flex: 1,
             child: IconButton(
-                onPressed: () => _getDialog(context, aIListMap),
+                onPressed: () => _getDialog(
+                    context, aIListMap, selectedAiProvider, changeEndpoint),
                 icon: const Icon(Icons.arrow_drop_down))),
         Expanded(
           flex: 4,
@@ -39,6 +44,7 @@ Widget chatTextBox(
           flex: 1,
           child: ElevatedButton(
             onPressed: () async {
+              if (textController.text.isEmpty) return;
               final String text = textController.text;
               textController.clear();
               //TODO switch to choose method based on ai motive
@@ -49,7 +55,7 @@ Widget chatTextBox(
                 ));
               final DateTime date = DateTime.now();
               final res = await sendImageGenerationRequest(
-                  AILists.textToImage.elementAt(0)['endpoint']!, text);
+                  selectedAiProvider.textToImageEndpoint, text);
               listProvider
                 ..addToList(InkWell(
                     onTap: () =>
@@ -72,26 +78,35 @@ Widget chatTextBox(
   );
 }
 
-_getDialog(BuildContext context, List<Map<String, String>> aIListMap) {
+_getDialog(BuildContext context, List<Map<String, String>> aIListMap,
+    SelectedAiProvider selectedAiProvider, Function(String) changeEndpoint) {
   showDialog(
     context: context,
     builder: (context) => SimpleDialog(
-      title: Text(
-        'AI Selector',
-        style: Theme.of(context).textTheme.bodyLarge,
+      title: Center(
+        child: Text(
+          'AI Selector',
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
       ),
-      children: getItems(context, aIListMap),
+      children:
+          getItems(context, aIListMap, selectedAiProvider, changeEndpoint),
     ),
   );
 }
 
-List<Widget> getItems(
-    BuildContext context, List<Map<String, String>> aIListMap) {
+List<Widget> getItems(BuildContext context, List<Map<String, String>> aIListMap,
+    SelectedAiProvider selectedAiProvider, Function(String) changeEndpoint) {
   return aIListMap.map((e) {
     return Column(
       children: [
-        ListTile(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          onTap: () {},
+        ListTile(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          onTap: () {
+            changeEndpoint(e['endpoint']!);
+            Navigator.pop(context);
+          },
           title: Text(
             e['name']!,
             style: Theme.of(context).textTheme.bodyMedium,
