@@ -3,3 +3,7 @@ build/
 .dart_tool/
 .idea/
 .vscode/
+linux/
+macos/
+web/
+windows/
