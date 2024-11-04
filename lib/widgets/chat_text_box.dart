@@ -76,16 +76,20 @@ Widget chatTextBox(
                                     imageData: res, name: date.toString())
                                 .saveImage();
                             WidgetsBinding.instance.addPostFrameCallback(
-                              (timeStamp) => ScaffoldMessenger.of(context)
-                                  .showSnackBar(SnackBar(
-                                      content: Center(
-                                          child: Text(
-                                        'Image Saved',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .labelMedium,
-                                      )))),
-                            );
+                                (timeStamp) => WidgetsBinding.instance
+                                        .addPostFrameCallback(
+                                      (timeStamp) {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(SnackBar(
+                                                content: Center(
+                                                    child: Text(
+                                          'Image Saved',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .labelMedium,
+                                        ))));
+                                      },
+                                    ));
                           },
                           icon: const Icon(Icons.download_rounded)),
                     )

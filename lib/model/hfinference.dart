@@ -29,7 +29,6 @@ Future sendImageGenerationRequest(String model, String input) async {
           'Error: ${response.statusCode} - ${response.reasonPhrase}');
     }
   } catch (e) {
-    // Puedes lanzar una excepción personalizada o registrar el error
     throw Exception(
         'An error occurred while making the HTTP request: $e');
   }
