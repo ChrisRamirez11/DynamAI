@@ -1,4 +1,4 @@
-
+import 'dart:io';
 import 'dart:math';
 import 'dart:developer' as dev;
 
@@ -13,22 +13,24 @@ Future sendImageGenerationRequest(String model, String input) async {
     "Authorization": "Bearer ${Consts.hfToken}",
     "Content-Type": "application/json"
   };
-  final body = jsonEncode({"inputs": input,
-  "parameters":{
-    "seed": number
-  }
+  final body = jsonEncode({
+    "inputs": input,
+    "parameters": {"seed": number}
   });
 
   try {
     dev.log(model);
     final response = await http.post(url, headers: headers, body: body);
 
-    if (response.statusCode == 200) {
+    if (response.statusCode >= 200 && response.statusCode < 300) {
       return response.bodyBytes;
     } else {
-      throw 'Error: ${response.statusCode}';
+      throw HttpException(
+          'Error: ${response.statusCode} - ${response.reasonPhrase}');
     }
   } catch (e) {
-    throw 'Exception: $e';
+    // Puedes lanzar una excepción personalizada o registrar el error
+    throw Exception(
+        'An error occurred while making the HTTP request: $e');
   }
 }
