@@ -1,9 +1,9 @@
-import 'package:app_tienda_comida/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:hf_ai_app/screens/home_screen.dart';
 
 class CustomErrorScreen extends StatelessWidget {
   final String errorMsg;
-  CustomErrorScreen({required this.errorMsg});
+  const CustomErrorScreen({super.key, required this.errorMsg});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class CustomErrorScreen extends StatelessWidget {
 
   getBackground() {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment(0, 0),
               end: Alignment(0, 1.8),
@@ -38,25 +38,25 @@ class CustomErrorScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(
+          const Icon(
             Icons.warning_rounded,
             size: 200,
             color: Color(0xFFEDBEAF),
           ),
-          Text(
+          const Text(
             'ERROR',
             style: TextStyle(fontSize: 30, color: Color(0xFFF9C5B7)),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Container(
+            child: SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.4,
               width: MediaQuery.sizeOf(context).width,
               child: Scrollbar(
                 child: SingleChildScrollView(
                   child: Text(errorMsg,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         color: Color(0xFFFCE3D5),
                       )),
@@ -66,7 +66,7 @@ class CustomErrorScreen extends StatelessWidget {
           ),
           Expanded(child: Container()),
           ElevatedButton(
-              style: ButtonStyle(
+              style:const ButtonStyle(
                   elevation: WidgetStatePropertyAll(10),
                   padding: WidgetStatePropertyAll(
                       EdgeInsets.symmetric(horizontal: 50)),
@@ -75,20 +75,20 @@ class CustomErrorScreen extends StatelessWidget {
                 Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => HomeSrceen(),
+                    builder: (context) => const HomeScreen(),
                   ),
                   (route) => false,
                 );
               },
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15),
+              child: const Padding(
+                padding: EdgeInsets.symmetric(vertical: 15),
                 child: Text('Menù Principal',
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                         color: Color(0xFFFCE3D5))),
               )),
-              Spacer()
+          const Spacer()
         ],
       ),
     );

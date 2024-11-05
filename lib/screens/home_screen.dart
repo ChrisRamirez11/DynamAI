@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
           bottomNavigationBar: _getBottomNavBar(),
-          appBar: AppBar(elevation: 20,title: Center(child: Text('DynamAI', style: Theme.of(context).textTheme.bodyLarge,)),
+          appBar: AppBar(elevation: 20,title: Text('DynamAI', style: Theme.of(context).textTheme.bodyLarge,),
             backgroundColor: primary,
           ),
           body: getViews(selectedIndex)),
