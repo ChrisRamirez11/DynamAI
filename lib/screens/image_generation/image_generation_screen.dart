@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:hf_ai_app/providers/selected_ai_provider.dart';
 import 'package:hf_ai_app/providers/text_image_list_provider.dart';
-import 'package:hf_ai_app/utils/ai_list.dart';
+import 'package:hf_ai_app/core/utils/ai_list.dart';
 import 'package:hf_ai_app/widgets/chat_text_box.dart';
 import 'package:provider/provider.dart';
 
-class Textgeneration extends StatefulWidget {
-  const Textgeneration({super.key});
+class ImageGeneration extends StatefulWidget {
+  const ImageGeneration({super.key});
 
   @override
-  State<Textgeneration> createState() => _TextgenerationState();
+  State<ImageGeneration> createState() => _ImageGenerationState();
 }
 
-class _TextgenerationState extends State<Textgeneration> {
+class _ImageGenerationState extends State<ImageGeneration> {
   final ScrollController _scrollController = ScrollController();
   final TextEditingController _textEditingController = TextEditingController();
 

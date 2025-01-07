@@ -3,7 +3,7 @@ import 'package:hf_ai_app/providers/selected_ai_provider.dart';
 import 'package:hf_ai_app/providers/text_image_list_provider.dart';
 import 'package:hf_ai_app/screens/custom_error_screen.dart';
 import 'package:hf_ai_app/screens/home_screen.dart';
-import 'package:hf_ai_app/utils/theme.dart';
+import 'package:hf_ai_app/core/utils/theme.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {

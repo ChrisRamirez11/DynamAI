@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hf_ai_app/screens/image_generation_screen.dart';
-import 'package:hf_ai_app/utils/theme.dart';
+import 'package:hf_ai_app/screens/image_generation/image_generation_screen.dart';
+import 'package:hf_ai_app/core/utils/theme.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -45,11 +45,11 @@ class _HomeScreenState extends State<HomeScreen> {
 List<BottomNavigationBarItem> _getItems() {
   List<BottomNavigationBarItem> itemsList = [
     const BottomNavigationBarItem(
-        icon: Icon(Icons.language), label: 'Translation'),
+        icon: Icon(Icons.storage_rounded), label: ''),
     const BottomNavigationBarItem(
         icon: Icon(Icons.photo_outlined), label: 'Images'),
     const BottomNavigationBarItem(
-        icon: Icon(Icons.supervisor_account_outlined), label: 'Chat'),
+        icon: Icon(Icons.person), label: 'Account'),
   ];
   return itemsList;
 }
@@ -61,7 +61,7 @@ getViews(int selectedIndex) {
         child: Text('Coming Soon'),
       );
     case 1:
-      return const Textgeneration();
+      return const ImageGeneration();
     case 2:
       return const Center(
         child: Text('Coming Soon'),

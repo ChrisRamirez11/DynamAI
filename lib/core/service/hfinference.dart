@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:developer' as dev;
 
-import 'package:hf_ai_app/utils/consts.dart';
+import 'package:hf_ai_app/core/utils/consts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
